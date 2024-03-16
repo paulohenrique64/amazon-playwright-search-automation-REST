@@ -4,7 +4,7 @@ const fs = require('fs');
 const playwright = require('playwright');
 const { chromium, firefox, webkit } = require('playwright');
 
-// TODO
+// search product function
 async function searchProduct(req, res) {
     // setting up
     const search_keyword = req.params.keyword;
@@ -46,7 +46,6 @@ async function searchProduct(req, res) {
     console.log('Location 11001 selected...');
 
     // search
-    searched_keyword = 'mechanical keyboard'
     await page.fill('#twotabsearchtextbox', search_keyword);
     await pauseAndScreenshot(page);
     await page.click('#nav-search-submit-button');
@@ -218,5 +217,3 @@ function saveInCsv(productData) {
 }
 
 module.exports = searchProduct;
-
-
