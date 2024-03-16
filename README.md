@@ -14,6 +14,8 @@ In this <strong>version</strong>, when the user accesses the `/api/search/:keywo
 6. Use `/api/search/:keyword` enpoint for search a product
 7. Ready 🎉
 
+<strong>Tip:</strong> You can follow the automation steps by viewing the `page.png` photo during the process.
+
 ## :rocket: For more informations
 
 - **[Playwright Documentation](https://playwright.dev/docs/intro)**
