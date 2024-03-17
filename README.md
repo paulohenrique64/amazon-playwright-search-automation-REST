@@ -25,7 +25,6 @@ In this <strong>version</strong>, when the user accesses the `/api/search/:keywo
 4. Run: `npm run start` or `yarn run start`
 5. Go to <a href="http://localhost:3000" target="_blank">http://localhost:8080</a> in the browser
 6. Use `/api/search/:keyword` enpoint for search a product
-7. Ready 🎉
 
 <strong>Tip:</strong> You can view the `page.png` photo in backend for follow the automation steps during search process.
 
