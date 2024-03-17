@@ -1,8 +1,21 @@
+## Technologies used and requirements
+
+- Node LTS
+- NPM or Yarn
+- Playwright
+- Express
+
 ## About [REST Version]
 
 I chose <strong> Playwright </strong> for this project due to its compatibility with multiple browsers, such as Chromium and Firefox, as well as its intuitive usability and excellent scalability.
 <br><br>
 In this <strong>version</strong>, when the user accesses the `/api/search/:keyword` endpoint, the express server returns a JSON containing the searched product data.
+
+- Searched product details that this application collects
+    - Title
+    - Price
+    - Boughts
+    - Bullet points
 
 ## 🛠 Installation and Setup Instructions
 
@@ -14,7 +27,7 @@ In this <strong>version</strong>, when the user accesses the `/api/search/:keywo
 6. Use `/api/search/:keyword` enpoint for search a product
 7. Ready 🎉
 
-<strong>Tip:</strong> You can follow the automation steps by viewing the `page.png` photo during the process.
+<strong>Tip:</strong> You can view the `page.png` photo in backend for follow the automation steps during search process.
 
 ## :rocket: For more informations
 

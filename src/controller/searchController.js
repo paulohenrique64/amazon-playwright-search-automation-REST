@@ -132,7 +132,7 @@ async function collectProductData(page) {
 
     // price
     try {
-        await page.waitForSelector('#corePriceDisplay_desktop_feature_div', {timeout: 7000})
+        await page.waitForSelector('#corePriceDisplay_desktop_feature_div', {timeout: 2000})
         productData.price = await page
             .locator('#corePriceDisplay_desktop_feature_div')
             .locator('[class="aok-offscreen"]')
@@ -185,19 +185,17 @@ async function collectProductData(page) {
 }
 
 async function showSearchResult(productData) {
-    console.log("\n");
+    console.log(`\nProduct data:\n\nTitle: ${productData.title}\nPrice: ${productData.price}\nBoughts: ${productData.boughts}\n`);
 
-    if (productData.title) console.log(`Title: ${productData.title}\n`);
-    if (productData.price) console.log(`Price: ${productData.price}\n`);
-    if (productData.boughts) console.log(`Boughts: ${productData.boughts}\n`);
     if (productData.bulletPoints) {
+        console.log('Bullet points: \n');
         for (const bulletPoint of productData.bulletPoints) 
-            console.log(`* ${await bulletPoint.textContent()}\n`);
+            console.log(`*${await bulletPoint.textContent()}`);
     }
 }
 
 async function pauseAndScreenshot(page) {
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
     await page.screenshot({path: 'page.png', fullPage: false});
 }
 
@@ -205,15 +203,14 @@ function saveInCsv(productData) {
     let csvContent = '';
 
     // add headers if file not exists
-    if (!fs.existsSync('searched_data.csv')) 
-        csvContent += 'Title,Price,Boughts\n';
-    
+    if (!fs.existsSync('searched_data.csv')) csvContent += 'Title,Price,Boughts\n';
+        
     // add formated data
     csvContent += `"${productData.title || ''}","${productData.price || ''}","${productData.boughts || ''}"\n`;
 
     // create a csv file
     fs.appendFileSync('searched_data.csv', csvContent);
-    console.log('Data successfully saved to CSV file');
+    console.log('\nData successfully saved to CSV file');
 }
 
 module.exports = searchProduct;
